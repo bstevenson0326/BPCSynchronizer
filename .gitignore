@@ -361,3 +361,20 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# --- RimWorld Modding Specific ---
+
+# Prevent built DLLs from being committed (output folder)
+Assemblies/
+
+# RimWorld mod preview image
+About/Preview.png
+
+# Workshop uploads or local backups (if using tools)
+*.rws
+
+# Backup files created by RimWorld mod tools
+*.bak
+
+# Temporary defs or cache
+Defs/Temp/
