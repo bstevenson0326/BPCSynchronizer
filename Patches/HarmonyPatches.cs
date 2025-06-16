@@ -93,7 +93,7 @@ namespace BPCSynchronizer.Patches
 
             if (_syncIcon == null)
             {
-                _syncIcon = ContentFinder<Texture2D>.Get("UI/Buttons/PolicyIcon1", false)
+                _syncIcon = ContentFinder<Texture2D>.Get("UI/Buttons/PolicyIcon", false)
                              ?? TexButton.Copy;
             }
 
