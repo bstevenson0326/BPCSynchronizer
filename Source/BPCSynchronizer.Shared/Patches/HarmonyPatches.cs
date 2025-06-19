@@ -101,6 +101,11 @@ namespace BPCSynchronizer.Patches
 
         private static void AppendPolicyToTabLabel(ref TaggedString __result, Def __instance)
         {
+            if (!BPCSyncMod.Settings.showLabels)
+            {
+                return;
+            }
+
             if (__instance is MainButtonDef mainButtonDef)
             {
                 string manager = null;
@@ -155,10 +160,18 @@ namespace BPCSynchronizer.Patches
                     }
 
                     string label = labelField?.GetValue(policy) as string;
-                    if (!string.IsNullOrEmpty(label) && !string.Equals(label, "BPCSynchronizer.AutoPolicyName".Translate(), StringComparison.OrdinalIgnoreCase))
+                    if (string.IsNullOrEmpty(label))
                     {
-                        __result += $" ({label})";
+                        return;
                     }
+
+                    if (label.Equals("BPCSynchronizer.AutoPolicyName".Translate(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        return; // Don't show anything for "Default"
+                    }
+
+                    string display = BPCSyncMod.Settings.showFullLabel ? label : label.Substring(0, 1);
+                    __result += $" ({display})";
                 }
                 catch (Exception ex)
                 {

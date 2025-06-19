@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-  <BPCSynchronizer.AutoPolicyName>Default</BPCSynchronizer.AutoPolicyName>
+	<BPCSynchronizer.AutoPolicyName>Default</BPCSynchronizer.AutoPolicyName>
 	<BPCSynchronizer.SelectPolicy>Select Policy</BPCSynchronizer.SelectPolicy>
-  <BPCSynchronizer.NoPolicy_Message>No Better Pawn Control policies found.</BPCSynchronizer.NoPolicy_Message>
-  <BPCSynchronizer.PolicyApplied_Message>Applied '{0}' policy to {1} of {2} categories {3}.</BPCSynchronizer.PolicyApplied_Message>
+	<BPCSynchronizer.NoPolicy_Message>No Better Pawn Control policies found.</BPCSynchronizer.NoPolicy_Message>
+	<BPCSynchronizer.PolicyApplied_Message>Applied '{0}' policy to {1} of {2} categories {3}.</BPCSynchronizer.PolicyApplied_Message>
+	
+	<BPCSynchronizer.ShowPolicyLabel_Settings>Show policy labels on tab buttons?</BPCSynchronizer.ShowPolicyLabel_Settings>
+	<BPCSynchronizer.ShowPolicyLabelTooltip_Settings>Checked to show the labels, unchecked to hide them.</BPCSynchronizer.ShowPolicyLabelTooltip_Settings>
+	
+	<BPCSynchronizer.ShowFullLabel_Settings>Show full label or first character of the policy?</BPCSynchronizer.ShowFullLabel_Settings>
+	<BPCSynchronizer.ShowFullLabelTooltip_Settings>Checked to show the full policy name, when unchecked it will use the first character of the policy name.</BPCSynchronizer.ShowFullLabelTooltip_Settings>
+	
+	<BPCSynchronizer.UINotIncludedModName_Settings>UI Not Included Integration</BPCSynchronizer.UINotIncludedModName_Settings>
+	
+	<BPCSynchronizer.LabelColorUINotIncluded_Settings>Change label color when UI Not Included is installed?</BPCSynchronizer.LabelColorUINotIncluded_Settings>
+	<BPCSynchronizer.LabelColorUINotIncludedTooltip_Settings>Checked to use a custom label color from the available choices, unchecked to use the default color.</BPCSynchronizer.LabelColorUINotIncludedTooltip_Settings>
+	
+	<BPCSynchronizer.LabelXOffset_Settings>Label X Offset: {0}</BPCSynchronizer.LabelXOffset_Settings>
+	<BPCSynchronizer.LabelXOffsetTooltip_Settings>The horizontal offset to apply to the label in UI Not Included.</BPCSynchronizer.LabelXOffsetTooltip_Settings>
+	
+	<BPCSynchronizer.LabelYOffset_Settings>Label Y Offset: {0}</BPCSynchronizer.LabelYOffset_Settings>
+	<BPCSynchronizer.LabelYOffsetTooltip_Settings>The vertical offset to apply to the label in UI Not Included.</BPCSynchronizer.LabelYOffsetTooltip_Settings>
+	
+	<BPCSynchronizer.LabelColor_Settings>Label Color</BPCSynchronizer.LabelColor_Settings>
 </LanguageData>

@@ -16,7 +16,11 @@ namespace BPCSynchronizer.Patches
         {
             try
             {
-                // Step 1: Get config field
+                if (!BPCSyncMod.Settings.showLabels)
+                {
+                    return;
+                }
+
                 FieldInfo configField = __instance.GetType().GetField("config", BindingFlags.Public | BindingFlags.Instance);
                 if (configField == null)
                 {
@@ -39,14 +43,12 @@ namespace BPCSynchronizer.Patches
 
                 if (!LabelCache.TryGetValue(defName, out string label))
                 {
-                    // Step 2: Resolve MainButtonDef
                     MainButtonDef def = DefDatabase<MainButtonDef>.GetNamedSilentFail(defName);
                     if (def == null || def.tabWindowClass == null)
                     {
                         return;
                     }
 
-                    // Step 3: Resolve manager from class
                     if (!ManagerCache.TryGetValue(defName, out string manager))
                     {
                         string tabClass = def.tabWindowClass.Name;
@@ -82,7 +84,6 @@ namespace BPCSynchronizer.Patches
                         ManagerCache[defName] = manager;
                     }
 
-                    // Step 4: Resolve current policy label
                     object policy = BpcSyncCommon.GetActivePolicy(manager);
                     if (policy == null)
                     {
@@ -99,21 +100,33 @@ namespace BPCSynchronizer.Patches
                     LabelCache[defName] = label;
                 }
 
-                // Optional: Skip drawing if Default
                 if (label == "BPCSynchronizer.AutoPolicyName".Translate())
                 {
                     return;
                 }
 
-                // Step 5: Draw label inside top right corner of button
-                float margin = 4f;
-                var labelRect = new Rect(rect.x, rect.y + 2f, rect.width - margin, 18f);
+                string displayText = BPCSyncMod.Settings.showFullLabel ? label : label.Substring(0, 1);
 
-                Text.Anchor = TextAnchor.UpperRight;
+                float offsetX = BPCSyncMod.Settings.labelOffsetX;
+                float offsetY = BPCSyncMod.Settings.labelOffsetY;
+
+                var labelRect = new Rect(
+                    rect.x + (rect.width / 2f) - 50f + offsetX,  // start centered, then offset
+                    rect.y + offsetY,
+                    100f,  // fixed width centered box
+                    18f
+                );
+
+                Text.Anchor = TextAnchor.UpperCenter;
                 Text.Font = GameFont.Tiny;
+
                 Color oldColor = GUI.color;
-                GUI.color = Color.yellow;
-                Widgets.Label(labelRect, "(" + label + ")");
+                GUI.color = BPCSyncMod.Settings.enableColorChangeWithUINI
+                    ? BPCSyncMod.Settings.labelColorWithUINI
+                    : Color.white;
+
+                Widgets.Label(labelRect, "(" + displayText + ")");
+
                 GUI.color = oldColor;
                 Text.Anchor = TextAnchor.UpperLeft;
                 Text.Font = GameFont.Small;
