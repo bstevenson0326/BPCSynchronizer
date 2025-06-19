@@ -100,7 +100,7 @@ namespace BPCSynchronizer.Patches
                 }
 
                 // Optional: Skip drawing if Default
-                if (label == "Default")
+                if (label == "BPCSynchronizer.AutoPolicyName".Translate())
                 {
                     return;
                 }

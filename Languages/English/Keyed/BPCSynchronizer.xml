@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <BPCSynchronizer.AutoPolicyName>Default</BPCSynchronizer.AutoPolicyName>
+	<BPCSynchronizer.SelectPolicy>Select Policy</BPCSynchronizer.SelectPolicy>
+  <BPCSynchronizer.NoPolicy_Message>No Better Pawn Control policies found.</BPCSynchronizer.NoPolicy_Message>
+  <BPCSynchronizer.PolicyApplied_Message>Applied '{0}' policy to {1} of {2} categories {3}.</BPCSynchronizer.PolicyApplied_Message>
+</LanguageData>

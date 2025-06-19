@@ -28,8 +28,6 @@ namespace BPCSynchronizer.Patches
                     labelCapGetter,
                     postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(AppendPolicyToTabLabel))
                 );
-
-                Log.Message("[BPCSync] Tab label patch applied.");
             }
             else
             {
@@ -44,8 +42,6 @@ namespace BPCSynchronizer.Patches
                     playSettingsMethod,
                     postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(DoPlaySettingsGlobalControls_Postfix))
                 );
-
-                Log.Message("[BPCSync] PlaySettings button patch applied.");
             }
             else
             {
@@ -68,7 +64,6 @@ namespace BPCSynchronizer.Patches
                             {
                                 var harmonyDelayed = new Harmony("com.hawqeye19.bpcsync-uini");
                                 harmonyDelayed.Patch(method, postfix: new HarmonyMethod(postfix));
-                                Log.Message("[BPCSync] UINotIncluded.Button_Worker.OnGUI patch applied.");
                             }
                         }
                     }
@@ -81,7 +76,7 @@ namespace BPCSynchronizer.Patches
 
             LoadStatePatch.Apply(harmony);
 
-            Log.Message("[BPCSync] Harmony patches applied.");
+            Log.Message("[BPCSync] Initialized.");
         }
 
         internal static void DoPlaySettingsGlobalControls_Postfix(WidgetRow row, bool worldView)
@@ -160,7 +155,7 @@ namespace BPCSynchronizer.Patches
                     }
 
                     string label = labelField?.GetValue(policy) as string;
-                    if (!string.IsNullOrEmpty(label) && !string.Equals(label, "Default", StringComparison.OrdinalIgnoreCase))
+                    if (!string.IsNullOrEmpty(label) && !string.Equals(label, "BPCSynchronizer.AutoPolicyName".Translate(), StringComparison.OrdinalIgnoreCase))
                     {
                         __result += $" ({label})";
                     }
@@ -206,7 +201,7 @@ namespace BPCSynchronizer.Patches
                             postfix: new HarmonyMethod(typeof(LoadStatePatch), nameof(AfterLoadState))
                         );
 
-                        Log.Message($"[BPCSync] Patched LoadState(Policy) on {typeName}");
+                        //Log.Message($"[BPCSync] Patched LoadState(Policy) on {typeName}");
                     }
 
                     // Patch LoadState(List<Link>, List<Pawn>, Policy)
@@ -232,7 +227,7 @@ namespace BPCSynchronizer.Patches
                             postfix: new HarmonyMethod(typeof(LoadStatePatch), nameof(AfterLoadState))
                         );
 
-                        Log.Message($"[BPCSync] Patched LoadState(List<>, List<Pawn>, Policy) on {typeName}");
+                        //Log.Message($"[BPCSync] Patched LoadState(List<>, List<Pawn>, Policy) on {typeName}");
                     }
 
                     if (singleArg == null && multiArg == null)

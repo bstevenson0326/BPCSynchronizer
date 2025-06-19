@@ -46,7 +46,7 @@ namespace BPCSynchronizer
 
         internal static object GetActivePolicy(string managerClassName)
         {
-            Type managerType = BpcSyncCommon.GetManagerType("BetterPawnControl." + managerClassName);
+            Type managerType = GetManagerType("BetterPawnControl." + managerClassName);
             if (managerType == null)
             {
                 return null;

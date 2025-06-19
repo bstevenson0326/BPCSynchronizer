@@ -178,10 +178,7 @@ namespace BPCSynchronizer
             UINotIncludedPolicyLabelPatch.ClearCache(); // Clear cached labels to refresh UI
 
             // Add the message to the game (upper left)
-            Messages.Message(
-                $"Applied '{label}' policy to {appliedCount} of {totalManagers} categories{categories}.",
-                MessageTypeDefOf.TaskCompletion
-            );
+            Messages.Message("BPCSynchronizer.PolicyApplied_Message".Translate(label, appliedCount, totalManagers, categories), MessageTypeDefOf.TaskCompletion);
         }
     }
 }

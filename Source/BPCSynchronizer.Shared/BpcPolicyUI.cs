@@ -23,7 +23,7 @@ namespace BPCSynchronizer
 
             if (labelCounts.Count == 0)
             {
-                Messages.Message("No Better Pawn Control policies found.", MessageTypeDefOf.RejectInput);
+                Messages.Message("BPCSynchronizer.NoPolicy_Message".Translate(), MessageTypeDefOf.RejectInput);
                 return;
             }
 
