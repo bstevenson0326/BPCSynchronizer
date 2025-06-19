@@ -5,13 +5,19 @@
   <modVersion>1.0.0</modVersion>
   <url>https://github.com/bstevenson0326/BPCSynchronizer</url>
   <description>
-Automatically applies Better Pawn Control (BPC) policies across all supported tabs: Work, Schedule, Assign, Animals, Weapons, Mechs, and Robots, based on matching policy labels.
+Automatically applies Better Pawn Control (BPC) policies across all supported tabs—Work, Schedule, Assign, Animals, Weapons, Mechs, and Robots—based on matching policy labels.
 
-• Syncs policies instantly when switching or loading maps
-• Adds a sync button to the Play Settings menu
-• Displays the active policy label directly in each tab
-• Supports “UI Not Included” mod (Optional)
-     
+• Syncs policies instantly when switching or loading maps  
+• Adds a sync button to the Play Settings menu  
+• Displays the active policy label directly in each tab  
+• Fully compatible with the “UI Not Included” mod (optional)
+
+🔧 **Mod Settings Include:**  
+• Toggle showing/hiding tab label indicators  
+• Choose full policy name or just the first letter of the policy for non-default policies  
+• Customize label colors with UI Not Included mod installed  
+• Adjust label position offsets when UI Not Included is installed  
+
 Requires Better Pawn Control and Harmony.
   </description>
   <modDependencies>
