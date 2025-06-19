@@ -5,12 +5,12 @@ VisualStudioVersion = 17.14.36203.30 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
-		Source\RimworldPaths.props = Source\RimworldPaths.props
+		RimworldPaths.props = RimworldPaths.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCSynchronizer.RW15", "Source\BPCSynchronizer.RW15\BPCSynchronizer.RW15.csproj", "{2CBB4464-CE29-CC40-FB2E-2AA3C0A56241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCSynchronizer.RW15", "BPCSynchronizer.RW15\BPCSynchronizer.RW15.csproj", "{2CBB4464-CE29-CC40-FB2E-2AA3C0A56241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCSynchronizer.RW16", "Source\BPCSynchronizer.RW16\BPCSynchronizer.RW16.csproj", "{8D12EFF2-FF46-8FCE-D929-D1C6DDA6EE67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPCSynchronizer.RW16", "BPCSynchronizer.RW16\BPCSynchronizer.RW16.csproj", "{8D12EFF2-FF46-8FCE-D929-D1C6DDA6EE67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
